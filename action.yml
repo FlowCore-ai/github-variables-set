@@ -1,0 +1,25 @@
+name: "github-var-set"
+description: "Add/update variable in a GitHub repository"
+author: flowcore-ai-ltd
+inputs:
+  REPOSITORY_OWNER:
+    description: 'GitHub repository owner'
+    required: true
+  REPOSITORY_NAME:
+    description: 'GitHub repository name'
+    required: true
+  GITHUB_PAT:
+    description: 'GitHub personal access token'
+    required: true
+  GITHUB_VARIABLES_FILE:
+    description: 'Path to a JSON file with all the GitHub variables to be added/updated'
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.GITHUB_VARIABLES_FILE }}
+
+branding:
+  icon: refresh-cw
+  color: green
