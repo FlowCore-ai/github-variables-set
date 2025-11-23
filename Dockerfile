@@ -10,7 +10,7 @@ LABEL maintainer="FlowCore AI Ltd. <info@flowcore.ai>"
 
 RUN apk update && apk add --no-cache \
     jq=1.7.1-r0 \
-    curl=8.12.1-r1
+    curl=8.14.1-r2
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
